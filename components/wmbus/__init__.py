@@ -85,7 +85,7 @@ CONFIG_SCHEMA = cv.Schema({
 def safe_ip(ip):
     if ip is None:
         return IPAddress(0, 0, 0, 0)
-    return IPAddress(*ip.args)
+    return IPAddress(str(ip))
 
 async def to_code(config):
     var = cg.new_Pvariable(config[CONF_ID])
